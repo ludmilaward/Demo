@@ -19,7 +19,7 @@ steps:
   displayName: 'Run a multi-line script'
 
 - task: srlTest@0
-name: LRC
+  name: LRC
   inputs:
     serverEndpoint: 'LRC connection'
     tenantid: '159221713'
@@ -27,4 +27,4 @@ name: LRC
     testid: '3973'
 
 - script: echo Run ID of the LRC run $(LRC.LRC_RUN_ID) 
-  display name: 'Catch the Run Id of the LRC run'
+  displayName: 'Catch the Run Id of the LRC run'
