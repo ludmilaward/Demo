@@ -17,7 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-
+- task: octane-start-task@2
+  inputs:
+    OctaneServiceConnection: 'ADO'
+    WorkspaceList: '40001'
+    CreatePipelineCheckbox: true
 - task: srlTest@0
   name: LRC
   inputs:
@@ -28,3 +32,8 @@ steps:
 
 - script: echo Run ID of the LRC run $(LRC.LRC_RUN_ID) 
   displayName: 'Catch the Run Id of the LRC run'
+  
+- task: octane-end-task@2
+  inputs:
+    OctaneServiceConnection: 'ADO'
+    WorkspaceList: '40001'
