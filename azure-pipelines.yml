@@ -31,9 +31,11 @@ steps:
     testid: '3973'
 
 - script: echo Run ID of the LRC run $(LRC.LRC_RUN_ID) 
+  condition: always()
   displayName: 'Catch the Run Id of the LRC run'
   
 - task: octane-end-task@2
+  condition: always()
   inputs:
     OctaneServiceConnection: 'ADO'
     WorkspaceList: '40001'
